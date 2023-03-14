@@ -7,7 +7,6 @@ const getMaxDigit = (num) => {
 
 }
 
-
 //// №2
 
 const pow = (firstNum, secondNum) => {
@@ -36,7 +35,6 @@ const changeFirstLetter = (name) => {
 
 }
 
-
 //// №4
 
 const chalculateSum = (sum) => {
@@ -58,6 +56,7 @@ const getRandomNumber = (N, M) => {
 }
 
 //// №6
+
 const countLetter = (letter, text) => { 
 
     var counter = 0;
@@ -76,8 +75,8 @@ const countLetter = (letter, text) => {
 
 }
 
-
 // №7 // №8
+
 const convertCurrency = (money) => { 
 
     const exchangeRate = 39;
@@ -85,13 +84,13 @@ const convertCurrency = (money) => {
     
     if( cash.includes('$') ) {
 
-        const sum = cash.replace('$','');
+        let sum = cash.replace('$','');
 
         return `${Math.trunc(sum * exchangeRate)}uah`;
 
     } else if(cash.includes('uah')) {
 
-        const sum = cash.replace('uah','');
+        let sum = cash.replace('uah','');
 
         return `${Math.trunc(sum / exchangeRate)}$`;
 
@@ -103,8 +102,8 @@ const convertCurrency = (money) => {
 
 }
 
-
 // №9
+
 const getRandomPassword = (setNum = 8) => { 
 
     let randomNum = '';
@@ -119,8 +118,8 @@ const getRandomPassword = (setNum = 8) => {
 
 }
 
-
 // №10
+
 const deleteLetters = (letter,text) => { 
 
     let result = text.toLowerCase().replaceAll(letter,'');
@@ -129,15 +128,36 @@ const deleteLetters = (letter,text) => {
 
 }
 
-
 // №11
+
 const isPalyndrom = (text) => { 
 
     text = text.toLowerCase();
+    return text.replaceAll(" ", '') == text.split('').reverse().join('').replaceAll(" ", '');
 
-    return text == text.split('').reverse().join('');
 }
 
+
+// №12
+
+const deleteDuplicateLetter = (text) => { 
+
+    let sum = '';
+    text = text.toLowerCase();
+
+    for(let i = 0;i < text.length;i++) {
+
+        if (text.lastIndexOf(text[i]) == text.indexOf(text[i])) {
+            
+            sum += text[i];
+
+        }
+
+    }
+
+    return sum;
+
+}
 
 console.log( `Функція No1: ${getMaxDigit(1236)}`)
 console.log( `Функція No2: ${pow(2,5)}`);
@@ -148,4 +168,5 @@ console.log(`Функція No6: ${countLetter("а", "Асталавіста")}`
 console.log(`Функція No7/8: ${convertCurrency("100$")}`);
 console.log(`Функція No9: ${getRandomPassword()}`);
 console.log(`Функція No10: ${deleteLetters('a', "blablabla")}`);
-console.log(`Функція No11: ${isPalyndrom("мадам")}`);
+console.log(`Функція No11: ${isPalyndrom("Я несу гусеня")}`);  
+console.log(`Функція No12: ${deleteDuplicateLetter("Бісквіт був дуже ніжним")}`);   
