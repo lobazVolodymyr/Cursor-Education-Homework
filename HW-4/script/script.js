@@ -73,6 +73,8 @@ const gradeForTheLesson = () => {
 
 console.log( gradeForTheLesson() );
 
- console.log( students );
- console.log( themes )
-    console.log(marks )
+
+//Originally arrays without changes
+console.log( students );
+console.log( themes )
+console.log(marks )
