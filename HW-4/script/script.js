@@ -12,8 +12,7 @@ const splitTheStudents = (students) => {
 
 }
 
-//
-splitTheStudents(students);
+console.log( splitTheStudents(students,themes) );
 
 
 const compareCouples = (couples, themes) => { 
@@ -36,17 +35,16 @@ const compareCouples = (couples, themes) => {
 
 }
 
-//
-compareCouples(splitTheStudents(students), themes);
+console.log( compareCouples(splitTheStudents(students), themes) );
 
 
 const compareMarks = (students, marks) => { 
 
-    let newArray = students;
+    let newArray = [];
    
     for(let i = 0;i < students.length;i++) {
         
-        console.log( newArray[i], marks[i] );
+        newArray.push( [students[i], marks[i]] );
 
     }
 
@@ -55,3 +53,26 @@ const compareMarks = (students, marks) => {
 }
 
 console.log( compareMarks(students, marks) );
+
+
+const gradeForTheLesson = () => {
+
+    let savedCompareCouplesData = compareCouples(splitTheStudents(students), themes);
+
+    for(let i = 0;i < savedCompareCouplesData.length;i++) { 
+        
+      let randomNum = Math.floor(Math.random() * (5 - 1 + 1) + 1);
+      
+       savedCompareCouplesData[i].push(randomNum);
+
+    }
+
+    return savedCompareCouplesData;
+
+}
+
+console.log( gradeForTheLesson() );
+
+ console.log( students );
+ console.log( themes )
+    console.log(marks )
