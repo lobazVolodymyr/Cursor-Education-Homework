@@ -81,3 +81,41 @@ const getMedian = (...numbers) => {
 }
 
 console.log( getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) );
+
+
+const filterEvenNumbers = (...numbers) => {
+
+    let newArr = numbers.filter( arr => {
+
+        return arr % 2 != 0;
+        
+    });
+
+    return newArr;
+
+}
+
+console.log( filterEvenNumbers(1, 2, 3, 4, 5, 6) );
+
+
+const countPositiveNumbers = (...numbers) => {
+
+    const newArr = numbers.filter( num => num > 0 );
+
+    return newArr.length;
+        
+}
+
+console.log( countPositiveNumbers(1, -2, 3, -4, -5, 6) );
+
+
+const getDividedByFive = (...numbers) => {
+
+    const filterArray = numbers.filter( num => num % 5 === 0 );
+
+    return filterArray;
+
+}
+
+console.log( getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) );
+
