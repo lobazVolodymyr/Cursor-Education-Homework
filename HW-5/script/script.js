@@ -119,3 +119,27 @@ const getDividedByFive = (...numbers) => {
 
 console.log( getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) );
 
+
+const replaceBadWords = (string) => {
+
+    const badWords = ['shit','fuck'];
+    const newArr = string.split(' ');
+   
+    for(let i = 0;i < newArr.length;i++) {
+
+        for(let j = 0;j < badWords.length;j++) {
+
+
+            newArr[i] = newArr[i].replace(badWords[j], '*'.repeat(badWords[j].length)) ;
+
+        }
+
+    }
+
+    return newArr.join(' ');
+
+}
+
+console.log( replaceBadWords("Are you fucking kidding?") );
+console.log(replaceBadWords("Holy shit!"))
+console.log(replaceBadWords("It's bullshit!"))
