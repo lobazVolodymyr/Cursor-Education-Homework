@@ -30,7 +30,7 @@ const getSubjects = (obj) => {
 
     for(let key in obj.subjects) {
 
-        newArr.push( key.charAt(0).toUpperCase() + key.slice(1) );
+        newArr.push( key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ') );
 
     }
 
@@ -67,10 +67,29 @@ console.log( getAverageMark(students[0]) );
 
 const getStudentInfo = (student) => {
 
-    let prewRes = getAverageMark(students[0]);
+    const picked = (({ name, course }) => ({ name, course}))(student);
 
-    console.log(prewRes);
+    picked.averageMark = getAverageMark(students[0]);
+
+    return picked;
 
 }
 
-getStudentInfo(students[0]);
+console.log( getStudentInfo(students[0]) );
+
+
+const getStudentsNames = (students) => { 
+
+    let newArray = [];
+
+    for(let i = 0;i < students.length;i++) {
+
+        newArray.push(students[i].name);
+
+    }
+
+    return newArray.sort();
+
+}
+
+console.log( getStudentsNames(students) );
