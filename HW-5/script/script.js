@@ -140,6 +140,26 @@ const replaceBadWords = (string) => {
 
 }
 
-console.log( replaceBadWords("Are you fucking kidding?") );
+console.log(replaceBadWords("Are you fucking kidding?") );
 console.log(replaceBadWords("Holy shit!"))
 console.log(replaceBadWords("It's bullshit!"))
+
+const divideByThree = (word) => {
+
+    let newArr = word.split(' ');
+
+    let newEmptyArray = [];
+
+    newArr.forEach(element => {
+
+        let myVal = element.length
+
+        newEmptyArray.push(element.length = 3);
+
+    });
+    
+    console.log(newEmptyArray);
+}
+
+console.log( divideByThree("Commander") );
+console.log( divideByThree("live") );
