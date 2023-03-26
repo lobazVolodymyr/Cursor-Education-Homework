@@ -80,16 +80,57 @@ console.log( getStudentInfo(students[0]) );
 
 const getStudentsNames = (students) => { 
 
-    let newArray = [];
-
-    for(let i = 0;i < students.length;i++) {
-
-        newArray.push(students[i].name);
-
-    }
-
-    return newArray.sort();
+    const studentNames = Object.keys(students).map( key => students[key].name);
+    
+    return studentNames.sort();
 
 }
 
 console.log( getStudentsNames(students) );
+
+
+const getBestStudent = (students) => {
+
+    let bestStudent = students.reduce( (prev, i) => {
+
+        if (getAverageMark(prev) > getAverageMark(i) ) {
+            
+            return prev;
+
+        } else {
+
+            return i;
+
+        }
+
+    });
+
+    return bestStudent.name;
+
+}
+
+console.log(getBestStudent(students));
+
+
+const calculateWordLetters = (text) => {
+
+    let obj = {}   
+
+    for(let char of text) {
+
+        if(obj[char]) {
+
+            obj[char] += 1;
+
+        } else {
+
+            obj[char] = 1;
+
+        }
+    } 
+
+    return obj;
+
+};
+
+console.log( calculateWordLetters("тест"));
