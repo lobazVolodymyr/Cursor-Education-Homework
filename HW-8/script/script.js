@@ -63,7 +63,7 @@ class Student {
         if (!this.dismiss) {
             this.#marks.push(value)
         } else {
-            return null
+            return null;
         }
     }
 
@@ -73,7 +73,7 @@ let studentProp = new Student("Вищої школи Психотерапії м
 studentProp.getInfo();
 studentProp.marks = 5;
 console.log(studentProp.getAverageMark());
-// 
+
 studentProp.dismissStudent();
 console.log(studentProp.dismissStudent());
 studentProp.getInfo();
